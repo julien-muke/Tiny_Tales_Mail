@@ -26,13 +26,13 @@ In this hands-on tutorial, I’ll walk you through how to design and build a sim
 
 
 
-👉 The user is going to submit a notification to an SNS topic
+👉 A place to store email templates and list of contacts
 
-👉 It's going to be integrated with a queue in other words the queue is subscribed to the topic and the message that we add to the topic ends up in the queue
+👉 A way to send emails
 
-👉 Then SQS is going to trigger a Lambda function
+👉 A way to “merge” email templates with contacts and send them to the email service
 
-👉 The Lambda function is going to run and it's going to write some information to cloudwatch and whatever we put in the topic we're going to see that in Cloud watch logs
+👉 A way to trigger sending of emails on a schedule
 
 
 
