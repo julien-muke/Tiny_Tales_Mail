@@ -9,7 +9,7 @@ In this hands-on tutorial, I’ll walk you through how to design and build a sim
 ## 📐 Architecture Design
 
 
-![Blank diagram-10](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/a79f6fd4-7451-4ac6-bf7c-89d9c161f8c6)
+![Tiny Tales Mail ](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/95530b37-1f1d-4ff8-8d27-6af3dda24c8f)
 
 
 
