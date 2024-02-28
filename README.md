@@ -25,7 +25,6 @@ In this hands-on tutorial, I’ll walk you through how to design and build a sim
 ## 🔋 Features
 
 
-
 👉 A place to store email templates and list of contacts
 
 👉 A way to send emails
@@ -36,4 +35,4 @@ In this hands-on tutorial, I’ll walk you through how to design and build a sim
 
 
 
-## ➡️ Step 1 - Create a queue
+## ➡️ Step 1 - Creating an S3 bucket to store email templates and contacts
