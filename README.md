@@ -15,10 +15,11 @@ In this hands-on tutorial, I’ll walk you through how to design and build a sim
 
 ## ⚙️ AWS Services Used
 
-* Amazon Simple Notification Service (Amazon SNS)
-* Amazon Simple Queue Service (Amazon SQS)
-* AWS Lambda Function
-* Amazon CloudWatch
+* Amazon Simple Email Service (SES)
+* AWS Lambda
+* Amazon Simple Storage Service (S3)
+* Amazon EventBridge
+* AWS Identity and Access Management (IAM)
 
 
 ## 🔋 Features
