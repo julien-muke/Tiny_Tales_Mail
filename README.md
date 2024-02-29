@@ -9,8 +9,7 @@ In this hands-on tutorial, I’ll walk you through how to design and build a sim
 ## 📐 Architecture Design
 
 
-![Tiny Tales Mail ](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/95530b37-1f1d-4ff8-8d27-6af3dda24c8f)
-
+![Tiny Tales Mail -2](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/8ad7533e-5ae5-4858-a6fb-581562d07857)
 
 
 ## ⚙️ AWS Services Used
