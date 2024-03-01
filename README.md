@@ -45,7 +45,7 @@ In this hands-on tutorial, I’ll walk you through how to design and build a sim
 ![Screenshot 2024-02-29 at 15 19 16](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/18fe16fc-b604-4d5d-bae8-498b4d4913f4)
 
 
-## ➡️ Step 2 - The HTML email template we’ll be using to send
+## ➡️ Step 2 - Create The HTML email template & The CSV file with contact information
 
 1. Inside of our S3 bucket, we want to store an email template, an HTML template that we'll actually send to people and then
 we need a list of the contacts as well, the email addresses to send to.
@@ -126,4 +126,12 @@ we need a list of the contacts as well, the email addresses to send to.
 ```
 
 </details>
+
+3. The other thing that that we're going to place in the S3 bucket is a CSV file of our contacts, make sure the emails that you put are ones that you can actually validate, meaning you can receive emails and click on a link that AWS sends you if you want them to actually go through, you can easily create one from scratch as well but make sure to call it `contacts.csv`
+
+
+![Screenshot 2024-02-29 at 16 10 13](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/ee0477dc-0295-4471-b2cb-d8d832d419fe)
+
+
+
 
