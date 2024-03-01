@@ -134,4 +134,16 @@ we need a list of the contacts as well, the email addresses to send to.
 
 
 
+## ➡️ Step 3 - Uploading the email template and contact list to the S3 bucket
 
+1. Go back to the S3 bucket, naviagate to the object tab, upload the `email_template.html` and `contacts.csv` make sure that the files are called that because later on we'll use them in the Lambda function not always the best idea but for this demo you will need these names to get it to work.
+
+2. Then click on "Upload"
+
+
+![Upload-objects-S3-bucket-jm-email-marketing-S3-Global](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/899ff274-d3f9-4128-b84e-701892ce2694)
+
+
+✔️ we've got the S3 bucket
+✔️ we've got the list of contacts to send to
+✔️ we've also got an email template that we can send
