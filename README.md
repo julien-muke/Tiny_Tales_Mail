@@ -35,3 +35,11 @@ In this hands-on tutorial, I’ll walk you through how to design and build a sim
 
 
 ## ➡️ Step 1 - Creating an S3 bucket to store email templates and contacts
+
+1. Sign in to the AWS Management Console and open the Amazon S3
+2. In the left navigation pane, choose Buckets
+3. Choose Create bucket
+4. For Bucket name, enter a name for your bucket, i'm going to name mine `jm-email-marketing`
+5. Block Public Access as best practice, and leave all the defaults and then click on "Create bucket"
+
+![Screenshot 2024-02-29 at 15 19 16](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/18fe16fc-b604-4d5d-bae8-498b4d4913f4)
