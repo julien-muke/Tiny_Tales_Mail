@@ -49,7 +49,7 @@ In this hands-on tutorial, I’ll walk you through how to design and build a sim
 
 1. Inside of our S3 bucket, we want to store an email template, an HTML template that we'll actually send to people and then
 we need a list of the contacts as well, the email addresses to send to.
-2. For the email template (copy and paste the code below and save it as a .html file)
+2. For the email template, copy and paste the code below and save it as `email_template.html
 
 ### <a name="snippets">🕸️ Code snippets</a>
 
