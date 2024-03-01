@@ -40,6 +40,90 @@ In this hands-on tutorial, I’ll walk you through how to design and build a sim
 2. In the left navigation pane, choose Buckets
 3. Choose Create bucket
 4. For Bucket name, enter a name for your bucket, i'm going to name mine `jm-email-marketing`
-5. Block Public Access as best practice, and leave all the defaults and then click on "Create bucket"
+5. Block Public Access as best practice, and leave all the defaults, scroll down then click on "Create bucket"
 
 ![Screenshot 2024-02-29 at 15 19 16](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/18fe16fc-b604-4d5d-bae8-498b4d4913f4)
+
+
+## ➡️ Step 2 - The HTML email template we’ll be using to send
+
+1. Inside of our S3 bucket, we want to store an email template, an HTML template that we'll actually send to people and then
+we need a list of the contacts as well, the email addresses to send to.
+2. For the email template (copy and paste the code below and save it as a .html file)
+
+### <a name="snippets">🕸️ Code snippets</a>
+
+<details>
+<summary><code>email_template.html</code></summary>
+
+```html
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Decode the Programmer's Riddle - Tiny Tales Mail</title>
+            <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f4f4f4;
+                color: #333;
+            }
+            .container {
+                max-width: 600px;
+                margin: auto;
+                background: #ffffff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            h1, h2 {
+                color: #007bff;
+            }
+            p {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+            .challenge-details {
+                background-color: #eee;
+                border-left: 5px solid #007bff;
+                padding: 10px;
+                margin: 20px 0;
+            }
+            </style>
+            </head>
+            <body>
+            <div class="container">
+            <h1>This Week's Tech Challenge: Decode the Programmer's Riddle</h1>
+            <p>Hello {{FirstName}}!</p>
+            <p>It's that time again—Tiny Tales Mail is back with a new challenge to stretch your tech muscles and ignite your problem-solving spark. This week, we're dialing up the difficulty with a puzzle that blends coding logic, pattern recognition, and a bit of creative thinking. Ready to dive in?</p>
+            
+            <div class="challenge-details">
+                <h2>Challenge: The Programmer's Riddle</h2>
+                <p>Imagine you're exploring an ancient digital labyrinth. To escape, you need to input a code sequence into the central computer. You find a clue carved on the wall:</p>
+                <p><strong>8, 5, 4, 9, 1, 7, 6, 3, 2, 0</strong></p>
+                <p>But there's a catch: The sequence is not what it seems. To find the correct next number, you must uncover the hidden pattern. Here's a hint to guide you on your quest:</p>
+                <p><strong>Hint:</strong> The order is determined not by mathematics, but by a property inherent to each number.</p>
+            </div>
+            
+            <h2>How to Participate:</h2>
+            <p>Convinced you've unraveled the labyrinth's secret? Email your solution and the reasoning behind it.</p>
+            
+            <h2>Prizes and Recognition:</h2>
+            <p><strong>Grand Solver:</strong> The first to submit the correct answer will receive a $20 Amazon gift card and be featured in our next newsletter.</p>
+            <p><strong>Creative Thinkers:</strong> The next four insightful submissions will earn a spot in our "Hall of Fame" section, celebrating your cleverness and creativity.</p>
+            
+            <p>This puzzle is designed to challenge and inspire. We encourage you to think outside the box and look forward to seeing the innovative ways you approach this problem.</p>
+            
+            <p>Best of luck, and let the best minds prevail!</p>
+            <p>Eagerly awaiting your solutions,</p>
+            <p><strong>The Tiny Tales Mail Team</strong></p>
+            </div>
+        </body>
+    </html>
+```
+
+</details>
+
