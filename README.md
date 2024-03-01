@@ -144,6 +144,6 @@ we need a list of the contacts as well, the email addresses to send to.
 ![Upload-objects-S3-bucket-jm-email-marketing-S3-Global](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/899ff274-d3f9-4128-b84e-701892ce2694)
 
 
-✔️ we've got the S3 bucket
-✔️ we've got the list of contacts to send to
-✔️ we've also got an email template that we can send
+✔️ we've got the S3 bucket <br/>
+✔️ we've got the list of contacts to send to <br/>
+✔️ we've also got an email template that we can send <br/>
