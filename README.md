@@ -147,3 +147,43 @@ we need a list of the contacts as well, the email addresses to send to.
 ✔️ we've got the S3 bucket <br/>
 ✔️ we've got the list of contacts to send to <br/>
 ✔️ we've also got an email template that we can send <br/>
+
+
+## ➡️ Step 4 - Setting up Amazon Simple Email Service (SES) with an email address and domain
+
+Before you start using Amazon SES, you must complete the following tasks:
+   * Verify an identity for sending email, Verify an email address or domain to use when sending email.
+   * Send your first email, Send an email by using the Amazon SES console, the Amazon SES API, an AWS SDK, or the AWS Command-Line Interface.
+
+1. Back over to the console, navigate to SES, then click "Get started"
+
+![Screenshot 2024-02-29 at 15 51 33](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/befd167f-2003-49db-b69c-f338e79a0522)
+
+
+2. You need to enter the email address that emails will come from, you do have to validate this, AWS will send you an email there's a link in that email that you need to click on, and make sure it's a valid email address
+
+![Screenshot 2024-02-29 at 15 52 32](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/63dc4c09-72f0-48bb-b4a7-38b186acebb6)
+
+
+3. Add your sending domain, a domain identity that matches your website or business name. Amazon SES needs to be linked to your domain and verified in order to send emails to your recipients through SES.
+
+I'm using `julienmuke.com` (if you need to purchase a domain you can use Amazon's Route 53 or other providers
+like GoDaddy etc.)
+
+
+![Screenshot 2024-02-29 at 15 53 16](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/6a1c1a16-9419-4b11-9712-5461f3d53199)
+
+
+4. Amazon is going to send an email to your email address, you'll need to open it up, click on the link to verify that you actually own the email address and once you do you'll be able to send emails from that address.
+
+
+![Screenshot 2024-02-29 at 15 55 25](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/a3dcc3a8-3f95-4a5b-b1c7-9fbed0eb9a5c)
+
+
+5. If you successfully did all of those steps then you also will have a Sandbox dashboard
+
+![Get-set-up-Amazon-Simple-Email-Service-us-east-1-2](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/34845d15-cecd-4931-bf1a-55aa9f9fb7ff)
+
+
+## ➡️ Step 4 - Sending a test email using Amazon SES
+
