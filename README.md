@@ -196,7 +196,37 @@ Let's send an email to make sure everything is working
 
 2. Select "Raw" which will let us test with HTML format
 3. For Scenario, we want to test the scenario where everything is successful, select "Successful delivery"
-
 (But you can also test different scenarios, like what happens if it bounces or what happens if there's a complaint and so on)
+4. Then paste in the HTML that we have from the email template on the Message box
+5. Click on "Send test email"
 
 ![Send-test-email-Amazon-Simple-Email-Service-us-east-1](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/cf27796c-91c1-4ad1-b684-002ac067d151)
+
+6. Then you will get a green checkmark, everything is working
+
+
+![Screenshot 2024-02-29 at 16 00 32](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/238fbf37-387b-425d-bdd4-e9b801ed3abd)
+
+
+## ➡️ Step 5 - Validating email addresses to send to (a requirement for the sandbox)
+
+We need to validate the individual email addresses that we want to send to, that are stored in our contacts.csv file 
+
+1. Back over the Sandbox dashboard, under verify email address click on "View all identities"
+2. Let's create a new identity, click on "Create identity"
+3. Identity type choose "Email address" and leave everything as default, then click "Create identity"
+
+
+![Create-identity-Amazon-Simple-Email-Service-us-east-1](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/26abe425-905c-4162-b92b-2ec3e84c7a7a)
+
+
+4. You will recieve an email from your inbox, open it and click the link to verify, you will get a success message, we can now start sending emails to that address
+
+5. You can verify as many as you want, after doing so you will see a list of verified emails
+
+![Screenshot 2024-02-29 at 16 09 47](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/a1dc2128-ae2e-440c-b865-54c67ca4d05a)
+
+
+
+
+
