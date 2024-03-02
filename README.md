@@ -187,3 +187,16 @@ like GoDaddy etc.)
 
 ## ➡️ Step 4 - Sending a test email using Amazon SES
 
+Let's send an email to make sure everything is working
+
+1. On your Sandbox dashboard click on "Send test email"
+
+![Screenshot 2024-02-29 at 15 58 24](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/eadf5077-fda2-4b54-ba78-1d99c0c81d20)
+
+
+2. Select "Raw" which will let us test with HTML format
+3. For Scenario, we want to test the scenario where everything is successful, select "Successful delivery"
+
+(But you can also test different scenarios, like what happens if it bounces or what happens if there's a complaint and so on)
+
+![Send-test-email-Amazon-Simple-Email-Service-us-east-1](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/cf27796c-91c1-4ad1-b684-002ac067d151)
