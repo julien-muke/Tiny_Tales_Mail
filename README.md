@@ -222,11 +222,83 @@ We need to validate the individual email addresses that we want to send to, that
 
 4. You will recieve an email from your inbox, open it and click the link to verify, you will get a success message, we can now start sending emails to that address
 
-5. You can verify as many as you want, after doing so you will see a list of verified emails
+5. After you verify all the emails, you will see a list of verified emails
 
 ![Screenshot 2024-02-29 at 16 09 47](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/a1dc2128-ae2e-440c-b865-54c67ca4d05a)
 
 
+## ➡️ Step 6 -  Creating a new Python Lambda function for email logic
+
+We need a way to merge the email template using Lambda to create and send personalized emails to SES with the contacts and then send them to SES to the email service.
+
+1. Back to the console, navigate to Lambda, then click on "Create function"
+2. We are going to "Author from scratch", for the function name i'm going to use `SendSESEmailToContacts`, for Runtime we are going to use `python3.12` leave everything as default then click "Create function"
+
+
+![Create-function-Lambda (7)](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/294ed281-bd9d-4a55-9906-52401abc4db6)
+
+
+3. Scroll down to the code section, i've got some code already so you don't have to write this from scratch:
+
+
+### <a name="snippets">🕸️ Code snippets</a>
+
+<details>
+<summary><code>Lambda Function Python Code</code></summary>
+
+```python
+import boto3
+import csv
+
+# Initialize the boto3 client
+s3_client = boto3.client('s3')
+ses_client = boto3.client('ses')
+
+def lambda_handler(event, context):
+    # Specify the S3 bucket name
+    bucket_name = 'jm-email-marketing' # Replace with your bucket name
+
+    try:
+        # Retrieve the CSV file from S3
+        csv_file = s3_client.get_object(Bucket=bucket_name, Key='contacts.csv')
+        lines = csv_file['Body'].read().decode('utf-8').splitlines()
+        
+        # Retrieve the HTML email template from S3
+        email_template = s3_client.get_object(Bucket=bucket_name, Key='email_template.html')
+        email_html = email_template['Body'].read().decode('utf-8')
+        
+        # Parse the CSV file
+        contacts = csv.DictReader(lines)
+        
+        for contact in contacts:
+            # Replace placeholders in the email template with contact information
+            personalized_email = email_html.replace('{{FirstName}}', contact['FirstName'])
+            
+            # Send the email using SES
+            response = ses_client.send_email(
+                Source='you@yourdomainname.com',  # Replace with your verified "From" address
+                Destination={'ToAddresses': [contact['Email']]},
+                Message={
+                    'Subject': {'Data': 'Your Weekly Tiny Tales Mail!', 'Charset': 'UTF-8'},
+                    'Body': {'Html': {'Data': personalized_email, 'Charset': 'UTF-8'}}
+                }
+            )
+            print(f"Email sent to {contact['Email']}: Response {response}")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+
+```
+
+6. Grab this code then come back to the Lambda function and just replace everything
+7. Make sure to replace your `bucket_name` `email_template` `contact_csv_file` and `you@yourdomainname.com` with your information if you named them differently with mine
+
+
+![Screenshot 2024-03-02 at 17 56 03](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/e2794f4d-f117-4b5d-8b7b-ab8548b26074)
 
 
 
+8. When copy and paste the Python and update it with your information, click on "Deploy"
+
+
+![Screenshot 2024-02-29 at 16 18 55](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/bb041642-8f03-47c8-9fb5-f59e92eec7dd)
