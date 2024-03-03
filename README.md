@@ -289,6 +289,8 @@ def lambda_handler(event, context):
 
 
 ```
+</details>
+
 
 6. Grab this code then come back to the Lambda function and just replace everything
 7. Make sure to replace your `bucket_name` `email_template` `contact_csv_file` and `you@yourdomainname.com` with your information if you named them differently with mine
