@@ -381,3 +381,30 @@ N.B: mAKE sure you leave the `/*` at the end your bucket name but just update yo
 4. Now the policy exists we just need to go back to the execution Role and attach it
 
 ![Screenshot 2024-02-29 at 16 31 25](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/ad3b0167-421c-42d2-bffd-b643a5df9dc1)
+
+
+5. Select the one we created `LambdaS3SESPolicy`
+
+![Screenshot 2024-02-29 at 16 32 39](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/2d7e7cc9-ef57-4bb4-87e9-e778f9265455)
+
+
+✔️ The Lambda function should have the permissions it needs to talk to S3 as well as SCS
+
+6. Now let's run the test event for the Lambda function again, back to the Lambda function, source code section, click on "test" button
+
+![Screenshot 2024-02-29 at 16 34 07](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/7e5def4b-202d-43fc-80d2-d270c2bd359d)
+
+
+✔️ this is looking better, I'm not getting an access denied, as you can see the email is sent to the two different email
+addresses.
+
+Let's check my inbox:
+
+
+![Screenshot 2024-02-29 at 16 38 32](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/6401a723-455b-46ee-9eab-7f41296858aa)
+
+
+✔️ It's filled in my first name that was the one placeholder that we had everything else is the same from the template, it worked perfectly 
+
+
+
