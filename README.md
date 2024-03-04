@@ -304,3 +304,23 @@ def lambda_handler(event, context):
 
 
 ![Screenshot 2024-02-29 at 16 18 55](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/bb041642-8f03-47c8-9fb5-f59e92eec7dd)
+
+
+## ➡️ Step 7 - Configuring and running a test event for the Lambda function
+
+1. Set up a new test event, click on the Arrow to the right of test, then configure test event, create a new event
+
+![Screenshot 2024-02-29 at 16 19 39](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/fd4dbd9a-fe16-480a-a721-c8ce0a61661e)
+
+2. We are going to name it `TestSendEmail`
+3. we can use a really simple generic JSON test event, copy and replace it in the event
+
+```json
+{
+  "comment": "Generic test event for scheduled Lambda execution. The function does not use this event data.",
+  "test": true
+}
+```
+
+![Screenshot 2024-02-29 at 16 21 49](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/3a455388-10a5-421b-8daf-f33649c4cc11)
+
