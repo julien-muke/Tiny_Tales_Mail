@@ -407,4 +407,25 @@ Let's check my inbox:
 ✔️ It's filled in my first name that was the one placeholder that we had everything else is the same from the template, it worked perfectly 
 
 
+## ➡️ Step 10 - Trigger the Lambda function to send emails on a schedule
 
+We need a way to trigger sending those emails, in other words we need to trigger the Lambda function. There's lots of
+ways that you can do that with Lambda you could trigger it when you upload a new email template to the S3 bucket, you could trigger from the console from the CLI, we're actually going to use EventBridge which used to be called cloudwatch events but with this you can set up a schedule to trigger it say weekly or daily or whenever you want to send your emails.
+
+1. Create a new schedule using EventBridge:
+
+A. To create an EventBridge, navigate to the console search for EventBridge, then select "EventBridge schedule"
+
+
+![Screenshot 2024-02-29 at 16 40 05](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/424572b2-9145-4011-848e-95908e4ecad5)
+
+B. For schedule name, i will name it `SendWeeklyEmail`
+C. And then scrolling down you choose your schedule pattern so you can do this just one time or you can
+set up recurring schedule like every week or every month:
+* Based on the name of mine I intend to do this weekly but just for testing purposes let's do a one-time schedule, 
+* I'll select today's date and then the time, 
+* Select the time zone it's default to the local one which is great 
+* And then the flexible time window this basically gives it some leeway basically a window in which it can run I'm going to turn that off and say I want it to run at exactly this time and then click "Next"
+
+
+![Amazon-EventBridge-Scheduler-us-east-1](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/2d0b1be1-d5b7-4d9d-bade-2a364fd1033e)
