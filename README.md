@@ -313,7 +313,7 @@ def lambda_handler(event, context):
 ![Screenshot 2024-02-29 at 16 19 39](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/fd4dbd9a-fe16-480a-a721-c8ce0a61661e)
 
 2. We are going to name it `TestSendEmail`
-3. we can use a really simple generic JSON test event, copy and replace it in the event
+3. we can use a really simple generic JSON test event, copy and replace it in the event, then click "Save"
 
 ```json
 {
@@ -324,3 +324,60 @@ def lambda_handler(event, context):
 
 ![Screenshot 2024-02-29 at 16 21 49](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/3a455388-10a5-421b-8daf-f33649c4cc11)
 
+
+N.B: If you click on Test back over the Lambda source code, you will get an "ACCESS DENIED" message, it's a pretty common thing to come across and this is where the permissions and the execution role come into play, let's do that on the next step.
+
+
+## ➡️ Step 8 - Updating the Lambda execution role with appropriate permissions
+
+1. Back to the Lambda, go to configutation tab, under permissions, click "Role name"
+
+![Screenshot 2024-02-29 at 16 24 05](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/a997aec6-f73e-4c3b-897b-7cc321c22d97)
+
+
+2. Scrolling down to permissions policies if we expand the execution Url, we just have some default permissions in to basically write to class watch logs there's nothing specific to S3 or SES, we need to add that manually to do that I'm going to go create a new Creating a new policy with permissions for S3 and SES policy with those permissions in it and then we'll attach it to this role when we're done
+
+## ➡️ Step 9 - Creating a new policy with permissions for S3 and SES
+
+1. Click "Policies" on left menu, click "Create policy"
+2. Toggle over to the JSON editor, copy IAM policy code below and replace it to the policy editor, make sure to update your bucket name, if you named yours differently, mine is `jm-email-marketing`
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": "arn:aws:s3:::jm-email-marketing/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ses:SendEmail",
+                "ses:SendRawEmail"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+
+![Create-policy-IAM-Global (5)](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/bed2761b-46ab-41ed-a351-061e18a6c2ea)
+
+
+N.B: mAKE sure you leave the `/*` at the end your bucket name but just update your bucket name. This basically says we're allowing get object so getting things out of the S3 bucket and then also we want to allow sending emails and sending raw emails which is the HTML code through SCS.
+
+
+3. When you click on "Next", name your policy `LambdaS3SESPolicy`, then click "Create policy"
+
+
+![Create-policy-IAM-Global (6)](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/c8b986c6-2531-4f21-9bcd-dfd19e907a53)
+
+
+4. Now the policy exists we just need to go back to the execution Role and attach it
+
+![Screenshot 2024-02-29 at 16 31 25](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/ad3b0167-421c-42d2-bffd-b643a5df9dc1)
