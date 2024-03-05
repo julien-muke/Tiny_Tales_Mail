@@ -460,3 +460,14 @@ Let's just go take a quick look at what happened and how you can debug if you di
 ✔️ If you check our log streams, if we look at the latest one, I've got success messages, I sent two different emails
 
 ![Screenshot 2024-02-29 at 17 01 15](https://github.com/julien-muke/Tiny_Tales_Mail/assets/110755734/36e863db-71ef-45d0-885b-f60dc5997aac)
+
+
+## 🏆 CHALLENGE: Ideas to enhance the application!
+
+* Incorporate DynamoDB to hold names and email addresses (instead of a CSV file)
+* Build a UI you can use to trigger sending the emails (use API Gateway)
+
+
+## 💰 Cost
+
+All services used are eligible for the AWS Free Tier. However, charges will incur at some point so it's recommended that you shut down resources after completing this tutorial.
